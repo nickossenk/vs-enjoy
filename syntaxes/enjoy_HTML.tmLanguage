@@ -27,7 +27,7 @@
 	<key>keyEquivalent</key>
 	<string>^@V</string>
 	<key>name</key>
-	<string>Velocity (HTML)</string>
+	<string>enjoy (HTML)</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -36,7 +36,7 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>text.velocity</string>
+			<string>text.enjoy</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -217,7 +217,7 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>text.html.velocity</string>
+	<string>text.html.enjoy</string>
 	<key>uuid</key>
 	<string>ECA114B6-F103-4D5B-BD0A-9CCD9F797018</string>
 </dict>

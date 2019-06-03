@@ -1,23 +1,16 @@
-# Apache Velocity
+#Jfinal Enjoy
 
-- Apache Velocity Template Language (VTL) support for Visual Studio Code
+主页: https://www.jfinal.com/doc/6-1
 
-## ScreenShot
-
-![ScreenShot](https://s26.postimg.org/j656uhajd/WX20170909-010112_2x.png)
-
-## TIPS
-
-- You can add `"emmet.includeLanguages": {"velocity": "html"}` in your user setting for enable emmet in velocity!
-
-## Features
-
-- syntaxes highlight
-- snippets
-- code beautify/formatting (Integrated with [prettydiff](http://prettydiff.com/))
-
-## Feedback
-
-- [Help me improve](https://github.com/luqimin/tinyvm/issues)
-
-**Enjoy!**
+##使用：
+###1、安装
+###2、设置
+  + 打开 File -> Preference -> Settings -> 右上角大括号 Open Settings JSON
+  + 在 ***files.associations*** 中添加如下代码：
+  + (```)
+      files.associations: {
+        "*.etl": "enjoy",
+        "*.enjoy": "enjoy"
+      }
+    (```)
+###3、Reload

@@ -4,20 +4,20 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>vm</string>
+		<string>etl</string>
 	</array>
 	<key>foldingStartMarker</key>
 	<string>(?x)
 		\#(?:
-			    (?:macro|if|foreach)\b \s* \(
-			|\{ (?:macro|if|foreach)\b \s* \(
+			    (?:define|if|for)\b \s* \(
+			|\{ (?:define|if|for)\b \s* \(
 		).*(?!\#\{?end).*$</string>
 	<key>foldingStopMarker</key>
 	<string>\#end\b|\#\{end</string>
 	<key>keyEquivalent</key>
 	<string>^@V</string>
 	<key>name</key>
-	<string>Velocity</string>
+	<string>enjoy</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -26,13 +26,13 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>constant.character.escape.backslash.velocity</string>
+					<string>constant.character.escape.backslash.enjoy</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>\\[\!\#\$\\]</string>
 			<key>name</key>
-			<string>source.velocity.embedded</string>
+			<string>source.enjoy.embedded</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -57,11 +57,11 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.comment.velocity</string>
+					<string>punctuation.definition.comment.enjoy</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\#\#).*$\n?</string>
+			<string>(\#\#\#).*$\n?</string>
 			<key>name</key>
 			<string>comment.line.double-number-sign</string>
 		</dict>
@@ -69,24 +69,24 @@
 			<key>begin</key>
 			<string>(?=#\*)</string>
 			<key>end</key>
-			<string>(?&lt;=\*#|\*#\n)</string>
+			<string>(?&lt;=\-\-#|\-\-#\n)</string>
 			<key>name</key>
-			<string>source.velocity.embedded</string>
+			<string>source.enjoy.embedded</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\#\*\*</string>
+					<string>\#\-\-</string>
 					<key>captures</key>
 					<dict>
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.comment.velocity</string>
+							<string>punctuation.definition.comment.enjoy</string>
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\*\#\n?</string>
+					<string>\-\-\#\n?</string>
 					<key>name</key>
 					<string>comment.block.documentation</string>
 				</dict>
@@ -98,7 +98,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.comment.velocity</string>
+							<string>punctuation.definition.comment.enjoy</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -157,7 +157,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.array.begin.velocity</string>
+							<string>punctuation.definition.array.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -167,11 +167,11 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.array.end.velocity</string>
+							<string>punctuation.definition.array.end.enjoy</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.structure.array.velocity</string>
+					<string>meta.structure.array.enjoy</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -206,7 +206,7 @@
 							<key>match</key>
 							<string>,</string>
 							<key>name</key>
-							<string>punctuation.separator.array.velocity</string>
+							<string>punctuation.separator.array.enjoy</string>
 						</dict>
 					</array>
 				</dict>
@@ -226,7 +226,7 @@
 					<key>match</key>
 					<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b</string>
 					<key>name</key>
-					<string>constant.numeric.velocity</string>
+					<string>constant.numeric.enjoy</string>
 				</dict>
 			</array>
 		</dict>
@@ -240,22 +240,22 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.control.directive.velocity</string>
+							<string>keyword.control.directive.enjoy</string>
 						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.keyword.velocity</string>
+							<string>punctuation.definition.keyword.enjoy</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.keyword.begin.velocity</string>
+							<string>punctuation.definition.keyword.begin.enjoy</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.keyword.end.velocity</string>
+							<string>punctuation.definition.keyword.end.enjoy</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -265,27 +265,27 @@
 							|(\{) \b(?:else|end)\b (\})
 						)</string>
 					<key>name</key>
-					<string>source.velocity.embedded</string>
+					<string>source.enjoy.embedded</string>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>((#)\b(?:macro)\b)\s*(\()</string>
+					<string>((#)\b(?:define)\b)\s*(\()</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>storage.type.macro.velocity</string>
+							<string>storage.type.macro.enjoy</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.keyword.velocity</string>
+							<string>punctuation.definition.keyword.enjoy</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.parameters.begin.velocity</string>
+							<string>punctuation.definition.parameters.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -295,11 +295,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.parameters.begin.velocity</string>
+							<string>punctuation.definition.parameters.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>source.velocity.embedded</string>
+					<string>source.enjoy.embedded</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -308,11 +308,11 @@
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>entity.name.type.module.macro.velocity</string>
+									<string>entity.name.type.module.macro.enjoy</string>
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(?&lt;=#macro\()\s*([_a-zA-Z][-a-zA-Z0-9_]*)</string>
+							<string>(?&lt;=#define\()\s*([_a-zA-Z][-a-zA-Z0-9_]*)</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -328,17 +328,17 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>storage.type.variable.velocity</string>
+							<string>storage.type.variable.enjoy</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.keyword.velocity</string>
+							<string>punctuation.definition.keyword.enjoy</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.parameters.begin.velocity</string>
+							<string>punctuation.definition.parameters.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -348,11 +348,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.parameters.begin.velocity</string>
+							<string>punctuation.definition.parameters.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>source.velocity.embedded</string>
+					<string>source.enjoy.embedded</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -363,23 +363,23 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>((#)\b(?:if|elseif|foreach)\b)\s*(\()</string>
+					<string>((#)\b(?:if|for|switch|section|define)\b)\s*(\()</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.control.directive.velocity</string>
+							<string>keyword.control.directive.enjoy</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.keyword.velocity</string>
+							<string>punctuation.definition.keyword.enjoy</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.arguments.begin.velocity</string>
+							<string>punctuation.definition.arguments.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -389,52 +389,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.arguments.begin.velocity</string>
+							<string>punctuation.definition.arguments.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>source.velocity.embedded</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#directives-arguments</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>((#)\b(?:[a-zA-Z][-a-zA-Z0-9_]*)\b)\s*(\()</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.velocity</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.function.velocity</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.arguments.begin.velocity</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(\))</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.arguments.begin.velocity</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>source.velocity.embedded</string>
+					<string>source.enjoy.embedded</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -451,17 +410,17 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.velocity</string>
+							<string>entity.name.function.enjoy</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.function.velocity</string>
+							<string>punctuation.definition.function.enjoy</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.arguments.begin.velocity</string>
+							<string>punctuation.definition.arguments.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -471,11 +430,56 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.arguments.begin.velocity</string>
+							<string>punctuation.definition.arguments.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>source.velocity.embedded</string>
+					<string>source.enjoy.embedded</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#directives-arguments</string>
+						</dict>
+					</array>
+				</dict>
+				
+
+
+
+				<dict>
+					<key>begin</key>
+					<string>((#)\b(?:[a-zA-Z][-a-zA-Z0-9_]*)\b)\s*(\()</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.enjoy</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.function.enjoy</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arguments.begin.enjoy</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(\))</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arguments.begin.enjoy</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>source.enjoy.embedded</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -534,57 +538,57 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>meta.function-call.method.with-arguments.velocity</string>
+							<string>meta.function-call.method.with-arguments.enjoy</string>
 						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
+							<string>variable.other.readwrite.enjoy</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.variable.velocity</string>
+							<string>punctuation.definition.variable.enjoy</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>variable.parameter.velocity</string>
+							<string>variable.parameter.enjoy</string>
 						</dict>
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.separator.parameters.velocity</string>
+							<string>punctuation.separator.parameters.enjoy</string>
 						</dict>
 						<key>5</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.velocity</string>
+							<string>entity.name.function.enjoy</string>
 						</dict>
 						<key>6</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.function.velocity</string>
+							<string>punctuation.definition.function.enjoy</string>
 						</dict>
 						<key>7</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.arguments.begin.velocity</string>
+							<string>punctuation.definition.arguments.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?x)
-						 ((\$ \!?   ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
+						 ((\# \@?   ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
 							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)* ) 
 							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) (\(\s*\))
 					</string>
 					<key>name</key>
-					<string>source.velocity.embedded</string>
+					<string>source.enjoy.embedded</string>
 				</dict>
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-						 ((\$ \!?   ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
+						 ((\# \@?   ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
 							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)* ) 
 							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) (\()\s* 
 					</string>
@@ -593,42 +597,42 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>meta.function-call.method.with-arguments.velocity</string>
+							<string>meta.function-call.method.with-arguments.enjoy</string>
 						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
+							<string>variable.other.readwrite.enjoy</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.variable.velocity</string>
+							<string>punctuation.definition.variable.enjoy</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>variable.parameter.velocity</string>
+							<string>variable.parameter.enjoy</string>
 						</dict>
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.separator.parameters.velocity</string>
+							<string>punctuation.separator.parameters.enjoy</string>
 						</dict>
 						<key>5</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.velocity</string>
+							<string>entity.name.function.enjoy</string>
 						</dict>
 						<key>6</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.function.velocity</string>
+							<string>punctuation.definition.function.enjoy</string>
 						</dict>
 						<key>7</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.arguments.begin.velocity</string>
+							<string>punctuation.definition.arguments.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -638,11 +642,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.arguments.end.velocity</string>
+							<string>punctuation.definition.arguments.end.enjoy</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>source.velocity.embedded</string>
+					<string>source.enjoy.embedded</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -654,28 +658,28 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-						 \$ \!? \{
+						 \# \!? \(
 					</string>
 					<key>captures</key>
 					<dict>
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.section.embedded.begin.velocity</string>
+							<string>punctuation.section.embedded.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\}</string>
+					<string>\)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.section.embedded.end.velocity</string>
+							<string>punctuation.section.embedded.end.enjoy</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>source.velocity.embedded</string>
+					<string>source.enjoy.embedded</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -684,23 +688,23 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.function-call.method.with-arguments.velocity</string>
+									<string>meta.function-call.method.with-arguments.enjoy</string>
 								</dict>
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>entity.name.function.velocity</string>
+									<string>entity.name.function.enjoy</string>
 								</dict>
 								<key>2</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.arguments.velocity</string>
+									<string>punctuation.definition.arguments.enjoy</string>
 								</dict>
 							</dict>
 							<key>match</key>
 							<string>(\w+)(\(\))</string>
 							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
+							<string>variable.other.readwrite.enjoy</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -710,17 +714,17 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.function-call.method.with-arguments.velocity</string>
+									<string>meta.function-call.method.with-arguments.enjoy</string>
 								</dict>
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>entity.name.function.velocity</string>
+									<string>entity.name.function.enjoy</string>
 								</dict>
 								<key>2</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.arguments.begin.velocity</string>
+									<string>punctuation.definition.arguments.begin.enjoy</string>
 								</dict>
 							</dict>
 							<key>end</key>
@@ -730,11 +734,11 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.arguments.end.velocity</string>
+									<string>punctuation.definition.arguments.end.enjoy</string>
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
+							<string>variable.other.readwrite.enjoy</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -747,13 +751,13 @@
 							<key>match</key>
 							<string>\w+</string>
 							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
+							<string>variable.other.readwrite.enjoy</string>
 						</dict>
 						<dict>
 							<key>match</key>
 							<string>\.</string>
 							<key>name</key>
-							<string>punctuation.separator.parameters.velocity</string>
+							<string>punctuation.separator.parameters.enjoy</string>
 						</dict>
 					</array>
 				</dict>
@@ -769,27 +773,27 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.arguments.end.velocity</string>
+							<string>punctuation.definition.arguments.end.enjoy</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>meta.function-call.method.with-arguments.velocity</string>
+							<string>meta.function-call.method.with-arguments.enjoy</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.velocity</string>
+							<string>entity.name.function.enjoy</string>
 						</dict>
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.function.velocity</string>
+							<string>punctuation.definition.function.enjoy</string>
 						</dict>
 						<key>5</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.arguments.begin.velocity</string>
+							<string>punctuation.definition.arguments.begin.enjoy</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -837,15 +841,15 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(if|while|for|in|foreach|return|ifelse|else|case|macro|end|stop)\b</string>
+					<string>\b(if|switch|for|else|case|end|continue|define|section)\b</string>
 					<key>name</key>
-					<string>keyword.control.velocity</string>
+					<string>keyword.control.enjoy</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(set|parse|cparse|config|include|cinclude)\b</string>
+					<string>\b(set|number|date|include|render|push|return|break|escape|reset)\b</string>
 					<key>name</key>
-					<string>keyword.velocity</string>
+					<string>keyword.enjoy</string>
 				</dict>
 			</array>
 		</dict>
@@ -958,14 +962,14 @@
 					<key>end</key>
 					<string>"</string>
 					<key>name</key>
-					<string>string.quoted.double.velocity</string>
+					<string>string.quoted.double.enjoy</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>match</key>
 							<string>\\.</string>
 							<key>name</key>
-							<string>constant.character.escape.velocity</string>
+							<string>constant.character.escape.enjoy</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -981,11 +985,11 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>\$\{</string>
+							<string>\#\(</string>
 							<key>end</key>
 							<string>\}</string>
 							<key>name</key>
-							<string>source.velocity.embedded.source</string>
+							<string>source.enjoy.embedded.source</string>
 						</dict>
 					</array>
 				</dict>
@@ -995,14 +999,14 @@
 					<key>end</key>
 					<string>'</string>
 					<key>name</key>
-					<string>string.quoted.single.velocity</string>
+					<string>string.quoted.single.enjoy</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>match</key>
 							<string>\\'</string>
 							<key>name</key>
-							<string>constant.character.escape.velocity</string>
+							<string>constant.character.escape.enjoy</string>
 						</dict>
 					</array>
 				</dict>
@@ -1018,61 +1022,61 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
+							<string>variable.other.readwrite.enjoy</string>
 						</dict>
 						<key>10</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.variable.end.velocity</string>
+							<string>punctuation.definition.variable.end.enjoy</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.variable.velocity</string>
+							<string>punctuation.definition.variable.enjoy</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>variable.parameter.velocity</string>
+							<string>variable.parameter.enjoy</string>
 						</dict>
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.separator.parameters.velocity</string>
+							<string>punctuation.separator.parameters.enjoy</string>
 						</dict>
 						<key>5</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
+							<string>variable.other.readwrite.enjoy</string>
 						</dict>
 						<key>6</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.variable.begin.velocity</string>
+							<string>punctuation.definition.variable.begin.enjoy</string>
 						</dict>
 						<key>7</key>
 						<dict>
 							<key>name</key>
-							<string>variable.parameter.velocity</string>
+							<string>variable.parameter.enjoy</string>
 						</dict>
 						<key>8</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.separator.parameters.velocity</string>
+							<string>punctuation.separator.parameters.enjoy</string>
 						</dict>
 						<key>9</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
+							<string>variable.other.readwrite.enjoy</string>
 						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?x)
-						 ((\$ \!?   ) [a-zA-Z][-a-zA-Z0-9_]*) \b ( (?: (\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) (?!\()
-						|((\$ \!? \{) [a-zA-Z][-a-zA-Z0-9_]*) \b ( (?: (\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) ((\}))
+						 ((\# \@?   ) [a-zA-Z][-a-zA-Z0-9_]*) \b ( (?: (\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) (?!\()
+						|((\# \@? \() [a-zA-Z][-a-zA-Z0-9_]*) \b ( (?: (\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) ((\)))
 					</string>
 					<key>name</key>
-					<string>source.velocity.embedded</string>
+					<string>source.enjoy.embedded</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -1080,37 +1084,37 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
+							<string>variable.other.readwrite.enjoy</string>
 						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.variable.velocity</string>
+							<string>punctuation.definition.variable.enjoy</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.variable.begin.velocity</string>
+							<string>punctuation.definition.variable.begin.enjoy</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.variable.end.velocity</string>
+							<string>punctuation.definition.variable.end.enjoy</string>
 						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?x)
-						 (\$ \!?   ) [a-zA-Z][-a-zA-Z0-9_]* \b
-						|(\$ \!? \{) [a-zA-Z][-a-zA-Z0-9_]* \b (\})
+						 (\# \@?   ) [a-zA-Z][-a-zA-Z0-9_]* \b
+						|(\# \@? \() [a-zA-Z][-a-zA-Z0-9_]* \b (\))
 					</string>
 					<key>name</key>
-					<string>source.velocity.embedded</string>
+					<string>source.enjoy.embedded</string>
 				</dict>
 			</array>
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>text.velocity</string>
+	<string>text.enjoy</string>
 	<key>uuid</key>
 	<string>460426C7-D079-49DB-8E50-8E0B938644CA</string>
 </dict>

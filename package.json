@@ -1,12 +1,12 @@
 {
-    "name": "velocity",
-    "displayName": "Apache Velocity",
-    "description": "The Apache Velocity support for Visual Studio Code",
-    "version": "0.7.1",
-    "publisher": "luqimin",
+    "name": "enjoy",
+    "displayName": "Jfinal Enjoy",
+    "description": "Jfinal Enjoy Template Engine support for Visual Studio Code",
+    "version": "0.1.0",
+    "publisher": "Chenyajun",
     "repository": {
         "type": "git",
-        "url": "https://github.com/luqimin/tinyvm"
+        "url": "https://github.com/chenyajun107/vs-enjoy"
     },
     "engines": {
         "vscode": "^1.0.0"
@@ -16,46 +16,46 @@
         "Programming Languages"
     ],
     "activationEvents": [
-        "onLanguage:velocity"
+        "onLanguage:enjoy"
     ],
     "main": "./extension",
     "contributes": {
         "languages": [
             {
-                "id": "velocity",
+                "id": "enjoy",
                 "aliases": [
-                    "Velocity",
-                    "vtl"
+                    "Enjoy",
+                    "etl"
                 ],
                 "extensions": [
-                    ".vm",
-                    ".vtl"
+                    ".enjoy",
+                    ".etl"
                 ],
                 "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
             {
-                "language": "velocity",
-                "scopeName": "text.velocity",
-                "path": "./syntaxes/Velocity.tmLanguage"
+                "language": "enjoy",
+                "scopeName": "text.enjoy",
+                "path": "./syntaxes/enjoy.tmLanguage"
             },
             {
-                "language": "velocity",
-                "scopeName": "text.html.velocity",
-                "path": "./syntaxes/Velocity_HTML.tmLanguage"
+                "language": "enjoy",
+                "scopeName": "text.html.enjoy",
+                "path": "./syntaxes/enjoy_HTML.tmLanguage"
             }
         ],
         "snippets": [
             {
-                "language": "velocity",
+                "language": "enjoy",
                 "path": "./snippets/snippets.json"
             }
         ]
     },
     "keywords": [
-        "velocity",
-        "vm",
+        "enjoy",
+        "jfinal",
         "java",
         "template"
     ]

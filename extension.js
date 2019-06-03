@@ -6,8 +6,8 @@ const prettydiff = require('./lib/prettydiff');
 let formatOptions = {
     mode: 'beautify',
     html: true,
-    lang: 'velocity',
-    apacheVelocity: true,
+    lang: 'enjoy',
+    apacheenjoy: true,
     cssinsertlines: true,
     wrap: 100,
     comments: 'indent',
@@ -24,7 +24,7 @@ function rangeFactory(start, end) {
 }
 
 function activate(context) {
-    let formatText = vscode.languages.registerDocumentFormattingEditProvider('velocity', {
+    let formatText = vscode.languages.registerDocumentFormattingEditProvider('enjoy', {
         provideDocumentFormattingEdits: (document) => {
             let _data = document.getText();
             let output = prettydiff(
@@ -42,7 +42,7 @@ function activate(context) {
             return [vscode.TextEdit.replace(rangeFactory(firstLine.range.start, lastLine.range.end), output)];
         },
     });
-    let formatRange = vscode.languages.registerDocumentRangeFormattingEditProvider('velocity', {
+    let formatRange = vscode.languages.registerDocumentRangeFormattingEditProvider('enjoy', {
         provideDocumentRangeFormattingEdits: (document, range) => {
             let _data = document.getText(range);
             let fixedStart, fixedEnd;
