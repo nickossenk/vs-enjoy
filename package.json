@@ -6,7 +6,7 @@
     "publisher": "Chenyajun",
     "repository": {
         "type": "git",
-        "url": "https://github.com/chenyajun107/vs-enjoy"
+        "url": "https://github.com/chenyajun107/vs-enjoy.git"
     },
     "engines": {
         "vscode": "^1.0.0"
