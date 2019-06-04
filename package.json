@@ -2,7 +2,7 @@
     "name": "enjoy",
     "displayName": "Jfinal Enjoy",
     "description": "Jfinal Enjoy Template Engine support for Visual Studio Code",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "Chenyajun",
     "repository": {
         "type": "git",
@@ -39,11 +39,6 @@
                 "language": "enjoy",
                 "scopeName": "text.enjoy",
                 "path": "./syntaxes/enjoy.tmLanguage"
-            },
-            {
-                "language": "enjoy",
-                "scopeName": "text.html.enjoy",
-                "path": "./syntaxes/enjoy_HTML.tmLanguage"
             }
         ],
         "snippets": [
